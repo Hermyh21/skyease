@@ -21,6 +21,10 @@ mongoose.connect(process.env.MONGODB_URI)
 .catch(err => {        
     console.error('Error connecting to MongoDB:', err);
 });
+app.get('/', (req, res) => {
+  res.send('SkyEase Backend API is Running!');
+});
+
 app.use('/api/auth', authRoutes);
 app.use('/api/packing', packingRoutes);
 app.use('/api/flights', flightRoutes);
